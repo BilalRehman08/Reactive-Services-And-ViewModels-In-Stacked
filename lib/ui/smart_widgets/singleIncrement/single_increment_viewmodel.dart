@@ -4,7 +4,8 @@ import 'package:stacked/stacked.dart';
 
 class SingleIncrementViewModel extends BaseViewModel{
     final counterSer = locator<CounterServices>();
-
+    int get counterr => counterSer.count;
+    
     void updateCounter(){
       counterSer.incrementCounter();
       notifyListeners();

@@ -4,16 +4,18 @@ import 'package:stacked/stacked.dart';
 
 class DoubleIncrementView extends StatelessWidget {
   const DoubleIncrementView({ Key? key }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<DoubleIncrementViewModel>.reactive(builder: (context,model,child)=> GestureDetector(
-        onTap: (){},
+        onTap: (){
+          print(model.counterr);
+          model.updateCounter();
+        },
         child: Container(
           color: Colors.yellow,
           height: 100,
           width: 100,
-          child: const Text("Increment"),
+          child:   Text("${model.counterr}"),
         ),
       ),
     viewModelBuilder: () => DoubleIncrementViewModel(),);

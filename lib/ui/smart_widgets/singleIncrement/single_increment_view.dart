@@ -9,12 +9,14 @@ class SingleIncrementView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SingleIncrementViewModel>.reactive(builder: (context,model,child)=>
     GestureDetector(
-        onTap: (){},
+        onTap: (){
+          model.updateCounter();
+        },
         child: Container(
           color: Colors.yellow,
           height: 100,
           width: 100,
-          child: const Text("Increment"),
+          child:  Text("${model.counterr}"),
         ),
       ),
     viewModelBuilder: ()=> SingleIncrementViewModel(),
